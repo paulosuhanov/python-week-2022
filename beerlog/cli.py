@@ -1,13 +1,15 @@
-import typer
 from typing import Optional
-from beerlog.core import add_beer_to_database, get_beers_from_database
-from rich.table import Table
-from rich.console import Console
 
+import typer
+from rich.console import Console
+from rich.table import Table
+
+from beerlog.core import add_beer_to_database, get_beers_from_database
 
 main = typer.Typer(help="Beer Management Application")
 
 console = Console()
+
 
 @main.command("add")
 def add(
@@ -22,7 +24,6 @@ def add(
         print("beer added to database")
     else:
         print("ERROR!")
-        
 
 
 @main.command("list")
